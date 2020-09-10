@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+service LoginService {
+    rpc Login (LoginUser) returns (ReturnMessage) {}
+    rpc SignIn (SignInUser) returns (ReturnMessage) {}
+    rpc SignUp (CreateUser) returns (ReturnMessage) {}
+}
+
+message Empty {}
+
+message LoginUser{
+    string username = 1;
+    string password = 2;
+}
+
+ message CreateUser {
+    string username = 1;
+    string password = 2;
+    string confirmPassword = 3;
+ }
+
+ message ReturnMessage {
+     string msg = 1;
+     string status =2; 
+ }
