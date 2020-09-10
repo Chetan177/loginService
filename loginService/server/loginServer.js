@@ -13,6 +13,7 @@ var loginProto = grpc.loadPackageDefinition(packageDefinition);
 
 const server = new grpc.Server();
 
+// This is just for example. Use any database to store data
 const users = [
 	{
         username : "JohnBolton",
@@ -39,7 +40,9 @@ server.addService(loginProto.LoginService.service, {
 			});
 		}
     },
-    signUp: (call, callback) =>{}
+    signUp: (call, callback) =>{
+    // Code for SignUp 
+    }
 });
 
 server.bind("127.0.0.1:30043", grpc.ServerCredentials.createInsecure());
